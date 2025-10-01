@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
-import aboutUsImg from "@/assets/KIRANA-MART.jpg";
-import image from "@/assets/supermarket-hero.jpg";
+import aboutUsImg from "./assets/KIRANA-MART.jpg";
+import image from "./assets/supermarket-hero.jpg";
 import { Users, Store, Award, TrendingUp } from "lucide-react";
 import { useLocation } from "react-router-dom";
 

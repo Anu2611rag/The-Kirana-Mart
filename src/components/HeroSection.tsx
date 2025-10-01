@@ -4,9 +4,28 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import supermarketHero from "@/assets/supermarket-hero.jpg";
+import supermarketHero from "./assets/supermarket-hero.jpg";
+import AboutSection from "./AboutSection";
+import img from "./assets/process.jpg"
+import ani from "./assets/ani-news.png"
+import busi from "./assets/business-standard.png"
+import jhar from "./assets/jharkhandtimes.png"
+import lok from "./assets/lokmat-times.png"
+import ne from "./assets/northeast-times.png"
+import topper from "./assets/topper.webp"
+import zee from "./assets/zee5.png"
 
 const HeroSection = () => {
+  const logos = [
+    { src: ani, alt: "The Print" },
+    { src: busi, alt: "LatestLY" },
+    { src: lok, alt: "Lokmat Times" },
+    { src: ne, alt: "NorthEast Times" },
+    { src: ani, alt: "ANI" },
+    { src: zee, alt: "Zee5" },
+    { src: jhar, alt: "Jharkhand" },
+    { src: topper, alt: "Business Standard" },
+  ];
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -143,6 +162,82 @@ const HeroSection = () => {
 
       </div>
     </section>
+    {/* About Section */}
+   <AboutSection />
+
+   {/* process to open store */}
+   <section className="bg-white py-12 md:py-20">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-16 flex flex-col md:flex-row items-start justify-between gap-10">
+    
+    {/* Left side: Image */}
+    <div className="flex-1 rounded-lg shadow overflow-hidden">
+      <img
+        src={img}
+        alt="Process"
+        className="rounded-lg shadow-lg w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Right side: Steps */}
+    <div className="flex-1 flex flex-col gap-6 bg-white rounded-lg shadow-lg p-6">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-500">
+        Get The Best Grocery And Supermarket Franchise In Just 6 Simple Steps
+      </h2>
+
+      {/* Step 1 */}
+      <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h3 className="text-xl font-semibold mb-2">1. Appointment</h3>
+        <p>
+          You can get appointed as a franchisee of 7heven by proceeding through a proper process. It is easier but you need to be professional.
+        </p>
+      </div>
+
+      {/* Step 2 */}
+      <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h3 className="text-xl font-semibold mb-2">2. Your Site Survey</h3>
+        <p>
+          Grocery items are the daily needs of all. But still, before giving you a franchise, we need to survey your site, the demand of your customers and based upon it, 7heven will decide.
+        </p>
+      </div>
+
+      {/* Step 3 */}
+      <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h3 className="text-xl font-semibold mb-2">3. Appointment Franchise Verification</h3>
+        <p>
+          We need to verify so many things regarding the franchise business.
+        </p>
+      </div>
+
+      {/* Step 4 */}
+      <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h3 className="text-xl font-semibold mb-2">4. Area Code Activation</h3>
+        <p>
+          We have different codes based on areas where we have our franchise business. So before you start your franchise, we will assure you of an activated area code.
+        </p>
+      </div>
+
+      {/* Step 5 */}
+      <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h3 className="text-xl font-semibold mb-2">5. Handling Over Welcome Kit</h3>
+        <p>
+          After all these steps, we will love to hand over you the welcome kit for your new franchise business.
+        </p>
+      </div>
+
+      {/* Step 6 */}
+      <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+        <h3 className="text-xl font-semibold mb-2">6. Opening of the Franchise</h3>
+        <p>
+          With these few steps, you are done. 7heven welcomes you to its family. You can open your grocery shop as a franchisee of 7heven in your area.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+
+</section>
 
 
 <section className="py-12 bg-gray-50">
@@ -166,7 +261,59 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-    </>
+   
+   <section className="bg-white py-10 px-4">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-center text-gray-800 mb-6">
+        Featured In
+      </h2>
+
+      <div className="overflow-x-auto">
+        <div className="flex justify-center sm:justify-center gap-8 items-center w-max sm:w-full mx-auto px-4">
+          {logos.map((logo, index) => (
+            <div key={index} className="flex-shrink-0">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-20 sm:h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16 flex flex-col md:flex-row items-start justify-between gap-10">
+    
+    {/* Left side: Image */}
+    <div className="flex-1 rounded-lg shadow overflow-hidden">
+      <img
+        src={topper}
+        alt="Achievement"
+        className="rounded-lg shadow-lg w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Right side: Steps */}
+    <div className="flex-1 flex flex-col gap-6 bg-white  rounded-lg  p-6">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-500">
+        Best Start-Up Of The Year In (FMCG)
+      </h2>
+      <p className="rounded-lg  w-full h-auto object-cover">
+        Recently on 16th December 2022, a mega event was organized by some of the leading members in the industry; the India Startup Summit. in this Summit, one of the events was that the most successful startups in every industry were to be given a Startup Achiever Awards.
+
+Praising the hard work of our team we proudly share that The Kirana Mart has been awarded as the Best Startup of the Year in FMCG category. Here is a picture of a 7 heven team memeber receiving the Best Startup of the Year Award at the Indian Startup Summit. This award was given to the 7 heven because of the fast and vast success growth that we as a startup have achieved only in the last 3 years.
+      </p>
+
+     
+
+      
+
+      
+
+
+      
+    </div>
+  </div>
+    </section>
+     </>
   );
 };
 
