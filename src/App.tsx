@@ -11,6 +11,7 @@ import FeaturesSection from "./components/FeaturesSection";
 import Layout from "./Layout";
 import StoreSection from "./components/StoreSection";
 import FranchiseSection from "./components/FranchiseSection";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -20,16 +21,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutSection />} />
-          <Route path="/contact" element={<ContactSection />} />
-          <Route path="/stores" element={<StoreSection />} />
-          <Route path="/franchise" element={<FranchiseSection/>} />
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <div className="relative min-h-screen">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<AboutSection />} />
+              <Route path="/contact" element={<ContactSection />} />
+              <Route path="/stores" element={<StoreSection />} />
+              <Route path="/franchise" element={<FranchiseSection />} />
+
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <WhatsAppButton />
+          </div>
         </Layout>
       </BrowserRouter>
     </TooltipProvider>
