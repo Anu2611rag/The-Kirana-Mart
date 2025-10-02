@@ -33,10 +33,10 @@
 //               7<span className="text-primary">HEVEN</span>
 //             </div>
 //             <p className="text-background/80 leading-relaxed">
-//               India's most trusted and profitable supermarket franchise network. 
+//               India's most trusted and profitable supermarket franchise network.
 //               Join us in revolutionizing retail across the nation.
 //             </p>
-            
+
 //             <div className="flex space-x-4">
 //               {socialLinks.map((social, index) => (
 //                 <a
@@ -91,24 +91,24 @@
 //             <div className="space-y-3 text-background/80">
 //               <div>
 //                 <p className="font-semibold">Phone:</p>
-//                 <a 
+//                 <a
 //                   href="tel:+919625704468"
 //                   className="hover:text-primary transition-colors duration-200"
 //                 >
 //                   +91 96257 04468
 //                 </a>
 //               </div>
-              
+
 //               <div>
 //                 <p className="font-semibold">Email:</p>
-//                 <a 
+//                 <a
 //                   href="mailto:franchise@The Kirana Mart.com"
 //                   className="hover:text-primary transition-colors duration-200"
 //                 >
 //                   franchise@The Kirana Mart.com
 //                 </a>
 //               </div>
-              
+
 //               <div>
 //                 <p className="font-semibold">Address:</p>
 //                 <p className="text-sm">
@@ -126,7 +126,7 @@
 //             <div className="text-background/60 text-sm">
 //               © 2024 The Kirana Mart Supermarket Franchise. All rights reserved.
 //             </div>
-            
+
 //             <div className="flex space-x-6 text-sm">
 //               <a href="#privacy" className="text-background/60 hover:text-primary transition-colors duration-200">
 //                 Privacy Policy
@@ -173,23 +173,29 @@ const Footer = () => {
           {/* Brand + Contact Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-             <img src="/logo.jpeg" alt="Logo" className="h-12 w-50" />
+              <img src="/logo.jpeg" alt="Logo" className="h-12 w-50" />
             </div>
             <p className="text-background/80 leading-relaxed">
-              India's most trusted and profitable supermarket franchise network. 
+              India's most trusted and profitable supermarket franchise network.
               Join us in revolutionizing retail across the nation.
             </p>
 
             <div className="space-y-2 text-background/80">
               <div>
                 <p className="font-semibold">Phone:</p>
-                <a href="tel:+919871769900" className="hover:text-primary transition-colors duration-200">
+                <a
+                  href="tel:+919871769900"
+                  className="hover:text-primary transition-colors duration-200"
+                >
                   +91 98 7176 9900
                 </a>
               </div>
               <div>
                 <p className="font-semibold">Email:</p>
-                <a href="mailto:info@thekiranamart.com" className="hover:text-primary transition-colors duration-200">
+                <a
+                  href="mailto:info@thekiranamart.com"
+                  className="hover:text-primary transition-colors duration-200"
+                >
                   info@thekiranamart.com
                 </a>
               </div>
@@ -268,17 +274,26 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-background/60 text-sm">
-              © 2024 The Kirana Mart Supermarket Franchise. All rights reserved.
+              © 2018 The Kirana Mart Supermarket Franchise. All rights reserved.
             </div>
 
             <div className="flex space-x-6 text-sm">
-              <a href="#privacy" className="text-background/60 hover:text-primary transition-colors duration-200">
+              <a
+                href="#privacy"
+                className="text-background/60 hover:text-primary transition-colors duration-200"
+              >
                 Privacy Policy
               </a>
-              <a href="#terms" className="text-background/60 hover:text-primary transition-colors duration-200">
+              <a
+                href="#terms"
+                className="text-background/60 hover:text-primary transition-colors duration-200"
+              >
                 Terms & Conditions
               </a>
-              <a href="#support" className="text-background/60 hover:text-primary transition-colors duration-200">
+              <a
+                href="#support"
+                className="text-background/60 hover:text-primary transition-colors duration-200"
+              >
                 Support
               </a>
             </div>
