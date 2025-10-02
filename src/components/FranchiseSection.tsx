@@ -103,20 +103,14 @@ const FranchiseSection = () => {
     </div>
   </div>
 
-  {/* Video */}
-  <div className="w-full mt-8"> {/* increased mt-4 → mt-8 for more spacing */}
-    <h3 className="text-xl font-semibold text-green-500 mb-4">Watch Our Franchise Story</h3>
-    <div className="w-full h-[400px] md:h-[500px] mb-6">
-      <iframe
-        className="w-full h-full rounded-lg"
-        src="https://www.youtube.com/embed/9enykzfayj8"
-        title="7Heven Franchise Story"
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
+ {/* Video Section */}
+<div className="w-full mt-8">
+  <h3 className="text-xl font-semibold text-green-500 mb-4">Watch Our Franchise Story</h3>
+  <div className="w-full h-[400px] md:h-[500px] border border-gray-200 flex items-center justify-center rounded-lg bg-gray-100 text-gray-500 text-xl font-semibold mb-6">
+    Coming Soon
   </div>
+</div>
+
 </div>
 
     {/* Right Column: Cards Grid */}
