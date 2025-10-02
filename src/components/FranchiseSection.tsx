@@ -278,26 +278,28 @@ const FranchiseSection = () => {
 
       </div>
     </section>
-     <div className="bg-gray-100 rounded-2xl shadow-xl w-full overflow-hidden flex flex-col md:flex-row h-[500px] md:h-[600px] mx-auto">
+     <div className="min-h-screen bg-white flex items-center justify-center p-4">
+  <div className="bg-white rounded-2xl shadow-xl w-full overflow-hidden flex flex-col md:flex-row min-h-[400px] md:h-[600px]">
     
-  {/* Left Part: Header / Text */}
-  <div className="md:w-3/5 p-6 flex flex-col justify-center bg-white text-green-600">
-    <h1 className="text-4xl md:text-5xl font-bold mb-4">
-      Pay now and start your Kirana Mart supermarket franchise journey today!
-    </h1>
-    <div className="w-16 h-1 bg-yellow-400 mt-2"></div>
-  </div>
-  
-  {/* Right Part: QR Code / Coming Soon */}
-  <div className="md:w-2/5 p-6 flex items-center justify-center bg-gray-50">
-  <div className="w-64 md:w-60 h-80 md:h-96 bg-gray-200 rounded-xl flex items-center justify-center flex-col">
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <span className="text-gray-600 font-semibold text-xl">Coming Soon</span>
-  </div>
-</div>
+    {/* Left Part: Header / Text */}
+    <div className="md:w-3/5 p-6 flex flex-col justify-center bg-white text-black">
+      <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 leading-snug">
+        Pay now and start your Kirana Mart supermarket franchise journey today!
+      </h1>
+      <div className="w-16 h-1 bg-yellow-400 mt-2"></div>
+    </div>
+    
+    {/* Right Part: QR Code / Coming Soon */}
+    <div className="md:w-2/5 p-6 flex items-center justify-center bg-gray-50">
+      <div className="w-40 sm:w-48 md:w-56 h-48 sm:h-56 md:h-80 bg-gray-200 rounded-xl flex items-center justify-center flex-col">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 sm:h-12 sm:w-12 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span className="text-gray-500 font-semibold text-base sm:text-lg">Coming Soon</span>
+      </div>
+    </div>
 
+  </div>
 </div>
 
     </>

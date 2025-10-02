@@ -250,7 +250,7 @@ const HeroSection = () => {
             {/* LEFT COLUMN: Image - This will need to be replaced with your actual image component or URL */}
             <div className="lg:w-1/2 flex justify-center items-start lg:block">
               <img
-                src={"/public/shoppingCart.png"}
+                src={"shoppingCart.png"}
                 alt="Grocery cart in an aisle"
                 className="w-full h-auto max-h-[400px] lg:max-h-full object-cover rounded-lg shadow-xl"
               />
