@@ -4,19 +4,19 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/Faq";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-    
       <main>
         <HeroSection />
-       
+
         {/* <AboutSection /> */}
         <FeaturesSection />
         {/* <ContactSection /> */}
+        <FAQ />
       </main>
-      
     </div>
   );
 };
