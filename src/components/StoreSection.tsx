@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const StoreSection = () => {
+   const placeholders = [1, 2, 3]; 
  
   return (
     <>
@@ -24,11 +25,21 @@ const StoreSection = () => {
            Our Stores
          </h1>
        </div>
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-muted/30 to-background">
-      <div className="container mx-auto px-4 lg:px-8">
-        <h1>Coming Soon</h1>
+        <section className="w-full bg-gray-50 py-12 md:py-16">
+  <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col gap-12">
+    {placeholders.map((item, index) => (
+      <div
+        key={index}
+        className="w-full h-64 md:h-96 bg-gray-200 border border-green-500 rounded-xl shadow-lg flex items-center justify-center"
+      >
+        <span className="text-gray-600 font-semibold text-2xl md:text-3xl">
+          Coming Soon
+        </span>
       </div>
-    </section>
+    ))}
+  </div>
+</section>
+
   
     </>
   );
