@@ -75,12 +75,14 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
+              <a href="/brochure.pdf" download>
               <Button 
                 variant="default"
                 className="text-white-500 hover:shadow-elegant transition-all duration-300 mt-4 w-fit "
               >
                 Download Brochure
               </Button>
+              </a>
             </nav>
           </div>
         )}

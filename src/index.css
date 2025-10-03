@@ -5,6 +5,10 @@
 /* The Kirana Mart Supermarket Franchise Design System
 All colors MUST be HSL.
 */
+html, body {
+  overflow-x: hidden;
+}
+
 
 @layer base {
   :root {
