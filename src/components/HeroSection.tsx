@@ -315,101 +315,102 @@ const HeroSection = () => {
         </div>
       </section>
 
+      
       {/* process to open store */}
-      <section className="bg-white py-12 md:py-20">
-        <h2 className="text-3xl font-bold text-center m-8 text-primary-glow mb-10 text-black relative inline-block text-center w-full">
-          Ready to Launch Your Store? Just Follow These Simple Steps!
-        </h2>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-16 flex flex-col md:flex-row items-start justify-between gap-10">
-          {/* Left side: Image */}
-          <div className="flex-1 rounded-lg shadow overflow-hidden h-[421px]">
-            <img
-              src={img}
-              alt="Process"
-              className="rounded-lg shadow-lg w-full h-full object-cover"
-            />
-          </div>
+<section className="bg-white py-12 md:py-20">
+  {/* Main Heading */}
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center px-4 mb-10 text-black">
+    Ready to Launch Your Store? Just Follow These Simple Steps!
+  </h2>
 
-          {/* Right side: Steps */}
-          <div className="flex-1 flex flex-col gap-6 bg-white rounded-lg shadow-lg p-6 h-[421px] overflow-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-500">
-              Get The Best Grocery And Supermarket Franchise In Just 6 Simple
-              Steps
-            </h2>
+  <div className="container mx-auto px-4 sm:px-6 lg:px-16 flex flex-col md:flex-row items-start justify-between gap-10">
+    
+    {/* Left side: Image */}
+    <div className="flex-1 rounded-lg shadow  overflow-hidden">
+      <img
+        src={img}
+        alt="Process"
+        className="rounded-lg shadow-lg w-full h-auto object-cover"
+      />
+    </div>
 
-            {/* Step 1 */}
-            <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-semibold mb-2">1. Appointment</h3>
-              <p>
-                You can get appointed as a franchisee of The kirana mart by
-                proceeding through a proper process. It is easier but you need
-                to be professional.
-              </p>
-            </div>
+    {/* Right side: Steps */}
+    <div className="flex-1 bg-white rounded-lg shadow-lg p-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-green-500 text-center">
+        Get The Best Grocery And Supermarket Franchise In Just 6 Simple Steps
+      </h2>
 
-            {/* Step 2 */}
-            <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-semibold mb-2">
-                2. Your Site Survey
-              </h3>
-              <p>
-                Grocery items are the daily needs of all. But still, before
-                giving you a franchise, we need to survey your site, the demand
-                of your customers and based upon it, The kirana mart will
-                decide.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-semibold mb-2">
-                3. Appointment Franchise Verification
-              </h3>
-              <p>
-                We need to verify so many things regarding the franchise
-                business.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-semibold mb-2">
-                4. Area Code Activation
-              </h3>
-              <p>
-                We have different codes based on areas where we have our
-                franchise business. So before you start your franchise, we will
-                assure you of an activated area code.
-              </p>
-            </div>
-
-            {/* Step 5 */}
-            <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-semibold mb-2">
-                5. Handling Over Welcome Kit
-              </h3>
-              <p>
-                After all these steps, we will love to hand over you the welcome
-                kit for your new franchise business.
-              </p>
-            </div>
-
-            {/* Step 6 */}
-            <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-semibold mb-2">
-                6. Opening of the Franchise
-              </h3>
-              <p>
-                With these few steps, you are done. The kirana mart welcomes you
-                to its family. You can open your grocery shop as a franchisee of
-                The kirana mart in your area.
-              </p>
-            </div>
-          </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Step 1 */}
+        <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <h3 className="text-xl font-semibold mb-2">1. Appointment</h3>
+          <p>
+            You can get appointed as a franchisee of The kirana mart by
+            proceeding through a proper process. It is easier but you need
+            to be professional.
+          </p>
         </div>
-      </section>
 
-      <section></section>
+        {/* Step 2 */}
+        <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <h3 className="text-xl font-semibold mb-2">2. Your Site Survey</h3>
+          <p>
+            Grocery items are the daily needs of all. But still, before
+            giving you a franchise, we need to survey your site, the demand
+            of your customers and based upon it, The kirana mart will
+            decide.
+          </p>
+        </div>
+
+        {/* Step 3 */}
+        <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <h3 className="text-xl font-semibold mb-2">
+            3. Appointment Franchise Verification
+          </h3>
+          <p>
+            We need to verify so many things regarding the franchise
+            business.
+          </p>
+        </div>
+
+        {/* Step 4 */}
+        <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <h3 className="text-xl font-semibold mb-2">4. Area Code Activation</h3>
+          <p>
+            We have different codes based on areas where we have our
+            franchise business. So before you start your franchise, we will
+            assure you of an activated area code.
+          </p>
+        </div>
+
+        {/* Step 5 */}
+        <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <h3 className="text-xl font-semibold mb-2">
+            5. Handing Over Welcome Kit
+          </h3>
+          <p>
+            After all these steps, we will love to hand over you the welcome
+            kit for your new franchise business.
+          </p>
+        </div>
+
+        {/* Step 6 */}
+        <div className="bg-gray-50 p-5 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <h3 className="text-xl font-semibold mb-2">
+            6. Opening of the Franchise
+          </h3>
+          <p>
+            With these few steps, you are done. The kirana mart welcomes you
+            to its family. You can open your grocery shop as a franchisee of
+            The kirana mart in your area.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
 
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
