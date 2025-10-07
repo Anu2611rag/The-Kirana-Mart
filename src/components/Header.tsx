@@ -53,7 +53,7 @@ const Header = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="lg:hidden p-2 text-white hover:text-primary transition-colors"
+        className="lg:hidden p-2 text-green hover:text-primary transition-colors"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -68,7 +68,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-white hover:text-primary transition-colors duration-200 font-medium py-2"
+              className="text-black hover:text-primary transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
