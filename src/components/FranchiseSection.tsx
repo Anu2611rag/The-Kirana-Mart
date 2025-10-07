@@ -272,7 +272,7 @@ const FranchiseSection = () => {
 
       </div>
     </section>
-     <div className="min-h-screen bg-white flex items-center justify-center p-4">
+     <section className="bg-white flex items-center justify-center p-4 py-12 md:py-20">
   <div className="bg-white rounded-2xl shadow-xl w-full overflow-hidden flex flex-col md:flex-row min-h-[400px] md:h-[600px]">
     
     {/* Left Part: Header / Text */}
@@ -294,8 +294,7 @@ const FranchiseSection = () => {
     </div>
 
   </div>
-</div>
-
+</section>
     </>
   );
 };

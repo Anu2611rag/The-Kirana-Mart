@@ -47,6 +47,16 @@ import hindustanTimesLogo from "../components/assets/mediaPartnerImages/media-pa
 import hindustanLogo from "../components/assets/mediaPartnerImages/media-partner-5.png";
 import news18IndiaLogo from "../components/assets/mediaPartnerImages/media-partner-6.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import supermarketHero1 from "./assets/supermarket-hero.jpg";
+import supermarketHero2 from "./assets/supermarket-hero.jpg";
+import supermarketHero3 from "./assets/supermarket-hero.jpg";
+
 const HeroSection = () => {
   const logos = [
     // Images 1 - 10
@@ -84,6 +94,7 @@ const HeroSection = () => {
     { src: thirtyImage, alt: "Brand 30" },
   ];
 
+  const images=[supermarketHero1, supermarketHero2, supermarketHero3]
   const mediaPartners = [
     { src: zeeNewsLogo, alt: "Zee News Logo" },
     { src: aajTakLogo, alt: "Aaj Tak Logo" },
@@ -132,110 +143,121 @@ const HeroSection = () => {
 
   return (
     <>
-      <section
-        className="relative py-12 sm:py-16 lg:min-h-screen bg-cover bg-center bg-no-repeat flex items-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${supermarketHero})`,
-        }}
+       <section className="relative py-12 sm:py-16 lg:h-screen flex items-center overflow-hidden">
+      {/* Background Slider */}
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop
+        className="absolute inset-0 w-full h-full z-0"
       >
-        <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-20">
-          <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
-            {/* Hero Content - 8 columns */}
-            <div className="col-span-12 lg:col-span-8 text-white space-y-8 animate-fade-in">
-              <div className="space-y-2">
-                <h2 className="text-lg lg:text-xl font-semibold text-primary-glow">
-                  Launch Your Own Business
-                </h2>
-                <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold leading-tight">
-                  <span className="italic">J</span>oin The Most Profitable,
-                  <span className="block">Trusted & Supportive</span>
-                  <span className="text-primary-glow">
-                    Supermarket Franchise
-                  </span>
-                  <span className="block">Chain In India</span>
-                </h1>
-              </div>
+        {images.map((img, index) => (
+          <SwiperSlide key={index}>
+            <div
+              className="w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${img})`,
+              }}
+            ></div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-              <div className="flex flex-wrap gap-4 pt-6">
-                <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
-                  <span className="text-sm font-medium">
-                    400+ Outlets Nationwide
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
-                  <span className="text-sm font-medium">20,000+ Products</span>
-                </div>
-              </div>
+      {/* Overlay content */}
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 py-12 lg:py-20">
+        <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
+          {/* Hero Text */}
+          <div className="col-span-12 lg:col-span-8 text-white space-y-8 animate-fade-in">
+            <div className="space-y-2">
+              <h2 className="text-lg lg:text-xl font-semibold text-primary-glow">
+                Launch Your Own Business
+              </h2>
+              <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold leading-tight">
+                <span className="italic">J</span>oin The Most Profitable,
+                <span className="block">Trusted & Supportive</span>
+                <span className="text-primary-glow">Supermarket Franchise</span>
+                <span className="block">Chain In India</span>
+              </h1>
             </div>
 
-            {/* Quote Form - 4 columns */}
-            <div className="col-span-12 lg:col-span-4 animate-slide-in">
-              <Card className="p-6 lg:p-4 bg-white/95 backdrop-blur-sm shadow-elegant">
-                <div className="space-y-4">
-                  <div className="text-center">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
-                      Get a Free Quote
-                    </h3>
-                    <p className="text-muted-foreground mt-2">
-                      Start your franchise journey today
-                    </p>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <Input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="h-12 focus:ring-primary"
-                      required
-                    />
-                    <Input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="h-12 focus:ring-primary"
-                      required
-                    />
-                    <Input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="h-12 focus:ring-primary"
-                      required
-                    />
-                    <Textarea
-                      name="message"
-                      placeholder="Tell us about your requirements..."
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="min-h-[100px] resize-none focus:ring-primary"
-                      rows={4}
-                    />
-                    <div className="text-xs text-muted-foreground text-center py-2">
-                      Protected by reCAPTCHA - Privacy & Terms
-                    </div>
-                    <Button
-                      type="submit"
-                      className="w-full h-12 bg-gradient-to-r from-primary to-accent hover:shadow-elegant transition-all duration-300 text-lg font-semibold"
-                    >
-                      Send
-                    </Button>
-                  </form>
-                </div>
-              </Card>
+            <div className="flex flex-wrap gap-4 pt-6">
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
+                <span className="text-sm font-medium">400+ Outlets Nationwide</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
+                <span className="text-sm font-medium">20,000+ Products</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
+          {/* Quote Form */}
+          <div className="col-span-12 lg:col-span-4 animate-slide-in">
+            <Card className="p-6 lg:p-4 bg-white/95 backdrop-blur-sm shadow-elegant">
+              <div className="space-y-4">
+                <div className="text-center">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                    Get a Free Quote
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    Start your franchise journey today
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="h-12 focus:ring-primary"
+                    required
+                  />
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="h-12 focus:ring-primary"
+                    required
+                  />
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="h-12 focus:ring-primary"
+                    required
+                  />
+                  <Textarea
+                    name="message"
+                    placeholder="Tell us about your requirements..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="min-h-[100px] resize-none focus:ring-primary"
+                    rows={4}
+                  />
+                  <div className="text-xs text-muted-foreground text-center py-2">
+                    Protected by reCAPTCHA - Privacy & Terms
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full h-12 bg-gradient-to-r from-primary to-accent hover:shadow-elegant transition-all duration-300 text-lg font-semibold"
+                  >
+                    Send
+                  </Button>
+                </form>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
       {/* About Section */}
       <AboutSection />
 
@@ -326,7 +348,7 @@ const HeroSection = () => {
   <div className="container mx-auto px-4 sm:px-6 lg:px-16 flex flex-col md:flex-row items-start justify-between gap-10">
     
     {/* Left side: Image */}
-    <div className="flex-1 rounded-lg shadow  overflow-hidden">
+    <div className="flex-1 rounded-lg shadow overflow-hidden max-w-full">
       <img
         src={img}
         alt="Process"
@@ -335,7 +357,7 @@ const HeroSection = () => {
     </div>
 
     {/* Right side: Steps */}
-    <div className="flex-1 bg-white rounded-lg shadow-lg p-6">
+    <div className="flex-1 bg-white rounded-lg shadow-lg p-6 md:max-h-[600px] md:overflow-y-auto">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-green-500 text-center">
         Get The Best Grocery And Supermarket Franchise In Just 6 Simple Steps
       </h2>

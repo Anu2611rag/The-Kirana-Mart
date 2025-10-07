@@ -8,6 +8,13 @@ All colors MUST be HSL.
 html, body {
   overflow-x: hidden;
 }
+/* .swiper-button-next,
+.swiper-button-prev {
+  color: white;
+    display: block;
+  z-index: 10;           
+} */
+
 
 
 @layer base {
