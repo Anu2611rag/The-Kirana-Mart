@@ -203,16 +203,16 @@ const FranchiseSection = () => {
             <p className="text-sm leading-relaxed">
               The FOFO model allows you to manage your supermarket with complete
               independence. As the franchise owner, you make all the important decisions,
-              from staffing to operations, while benefiting from 7Heven’s trusted brand.
+              from staffing to operations, while benefiting from Kirana Mart trusted brand.
               <br />
               <br />
-              This model provides the flexibility to operate your 7Heven franchise
+              This model provides the flexibility to operate your Kirana Mart franchise
               confidently while receiving ongoing business support. It’s the perfect
               balance of independence and expert guidance, designed for those seeking a
               profitable supermarket franchise in India.
               <br />
               <br />
-              At 7Heven, our FOFO franchise model allows franchise owners to benefit from
+              At Kirana Mart, our FOFO franchise model allows franchise owners to benefit from
               our well-established brand while maintaining full control of daily
               operations, ensuring the freedom to grow their businesses their way.
             </p>
