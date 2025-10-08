@@ -53,9 +53,9 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import supermarketHero1 from "./assets/supermarket-hero.jpg";
-import supermarketHero2 from "./assets/supermarket-hero.jpg";
-import supermarketHero3 from "./assets/supermarket-hero.jpg";
+import supermarketHero1 from "./assets/s1.png";
+import supermarketHero2 from "./assets/s2.png";
+import supermarketHero3 from "./assets/s4.png";
 
 const HeroSection = () => {
   const logos = [
