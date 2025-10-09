@@ -5,6 +5,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import './HeroSection.css';
+
+
 import supermarketHero from "./assets/supermarket-hero.jpg";
 import AboutSection from "./AboutSection";
 import img from "./assets/process.jpg";
@@ -111,6 +114,21 @@ const HeroSection = () => {
     email: "",
     message: "",
   });
+   const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+
+  useEffect(() => {
+    if (swiperInstance) {
+      // Attach custom navigation after swiper is initialized
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.destroy(); // destroy old nav
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   const videos = [
     "https://www.youtube.com/embed/VSAhNjP-Dgg",
@@ -144,120 +162,137 @@ const HeroSection = () => {
   return (
     <>
        <section className="relative py-12 sm:py-16 lg:h-screen flex items-center overflow-hidden">
-      {/* Background Slider */}
-      <Swiper
-        modules={[Navigation, Autoplay]}
-        navigation
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop
-        className="absolute inset-0 w-full h-full z-0"
-      >
-        {images.map((img, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${img})`,
-              }}
-            ></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+  {/* Background Slider */}
+  <Swiper
+    modules={[Navigation, Autoplay]}
+    loop
+    autoplay={{ delay: 3000, disableOnInteraction: false }}
+    navigation={{
+      nextEl: ".custom-next",
+      prevEl: ".custom-prev",
+    }}
+    onSwiper={setSwiperInstance}
+    className="absolute inset-0 w-full h-full z-[5]"
+  >
+    {images.map((img, index) => (
+      <SwiperSlide key={index}>
+        <div
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${img})`,
+          }}
+        ></div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
 
-      {/* Overlay content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 py-12 lg:py-20">
-        <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
-          {/* Hero Text */}
-          <div className="col-span-12 lg:col-span-8 text-white space-y-8 animate-fade-in">
-            <div className="space-y-2">
-              <h2 className="text-lg lg:text-xl font-semibold text-primary-glow">
-                Launch Your Own Business
-              </h2>
-              <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold leading-tight">
-                <span className="italic">J</span>oin The Most Profitable,
-                <span className="block">Trusted & Supportive</span>
-                <span className="text-primary-glow">Supermarket Franchise</span>
-                <span className="block">Chain In India</span>
-              </h1>
-            </div>
+  {/* Custom Arrows - placed OUTSIDE the Swiper */}
+  <button 
+  ref={prevRef}
+  className="custom-prev absolute top-1/2 left-2 -translate-y-1/2 z-[99999] w-8 h-8 bg-black/30 rounded-full flex items-center justify-center text-white">
+    &#10094;
+  </button>
+  <button 
+          ref={nextRef}
 
-            <div className="flex flex-wrap gap-4 pt-6">
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
-                <span className="text-sm font-medium">400+ Outlets Nationwide</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
-                <span className="text-sm font-medium">20,000+ Products</span>
-              </div>
-            </div>
+  className="custom-next absolute top-1/2 right-2 -translate-y-1/2 z-[99999] w-8 h-8 bg-black/30 rounded-full flex items-center justify-center text-white">
+    &#10095;
+  </button>
+{/* Overlay content */}
+  <div className="relative z-[10] container mx-auto px-4 lg:px-8 py-12 lg:py-20">
+    <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center">
+      {/* Hero Text */}
+      <div className="col-span-12 lg:col-span-8 text-white space-y-8 animate-fade-in">
+        <div className="space-y-2">
+          <h2 className="text-lg lg:text-xl font-semibold text-primary-glow">
+            Launch Your Own Business
+          </h2>
+          <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold leading-tight">
+            <span className="italic">J</span>oin The Most Profitable,
+            <span className="block">Trusted & Supportive</span>
+            <span className="text-primary-glow">Supermarket Franchise</span>
+            <span className="block">Chain In India</span>
+          </h1>
+        </div>
+
+        <div className="flex flex-wrap gap-4 pt-6">
+          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+            <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
+            <span className="text-sm font-medium">400+ Outlets Nationwide</span>
           </div>
-
-          {/* Quote Form */}
-          <div className="col-span-12 lg:col-span-4 animate-slide-in">
-            <Card className="p-6 lg:p-4 bg-white/95 backdrop-blur-sm shadow-elegant">
-              <div className="space-y-4">
-                <div className="text-center">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
-                    Get a Free Quote
-                  </h3>
-                  <p className="text-muted-foreground mt-2">
-                    Start your franchise journey today
-                  </p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="h-12 focus:ring-primary"
-                    required
-                  />
-                  <Input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="h-12 focus:ring-primary"
-                    required
-                  />
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="h-12 focus:ring-primary"
-                    required
-                  />
-                  <Textarea
-                    name="message"
-                    placeholder="Tell us about your requirements..."
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="min-h-[100px] resize-none focus:ring-primary"
-                    rows={4}
-                  />
-                  <div className="text-xs text-muted-foreground text-center py-2">
-                    Protected by reCAPTCHA - Privacy & Terms
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full h-12 bg-gradient-to-r from-primary to-accent hover:shadow-elegant transition-all duration-300 text-lg font-semibold"
-                  >
-                    Send
-                  </Button>
-                </form>
-              </div>
-            </Card>
+          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+            <div className="w-2 h-2 bg-primary rounded-full animate-glow"></div>
+            <span className="text-sm font-medium">20,000+ Products</span>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Quote Form */}
+      <div className="col-span-12 lg:col-span-4 animate-slide-in">
+        <Card className="p-6 lg:p-4 bg-white/95 backdrop-blur-sm shadow-elegant">
+          <div className="space-y-4">
+            <div className="text-center">
+              <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                Get a Free Quote
+              </h3>
+              <p className="text-muted-foreground mt-2">
+                Start your franchise journey today
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="h-12 focus:ring-primary"
+                required
+              />
+              <Input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="h-12 focus:ring-primary"
+                required
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="h-12 focus:ring-primary"
+                required
+              />
+              <Textarea
+                name="message"
+                placeholder="Tell us about your requirements..."
+                value={formData.message}
+                onChange={handleInputChange}
+                className="min-h-[100px] resize-none focus:ring-primary"
+                rows={4}
+              />
+              <div className="text-xs text-muted-foreground text-center py-2">
+                Protected by reCAPTCHA - Privacy & Terms
+              </div>
+              <Button
+                type="submit"
+                className="w-full h-12 bg-gradient-to-r from-primary to-accent hover:shadow-elegant transition-all duration-300 text-lg font-semibold"
+              >
+                Send
+              </Button>
+            </form>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* About Section */}
       <AboutSection />
 

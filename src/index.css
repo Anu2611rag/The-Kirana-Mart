@@ -12,6 +12,11 @@ html, body {
 .swiper-button-prev {
   z-index: 9999 !important;
 } */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  z-index: 50 !important;
+}
 
 
 
